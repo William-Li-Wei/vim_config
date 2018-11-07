@@ -13,6 +13,11 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'dkprice/vim-easygrep'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " for js development
 Plugin 'vim-syntastic/syntastic'
@@ -20,6 +25,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'alvan/vim-closetag'         " auto close html tags
 Plugin 'Valloric/MatchTagAlways'    " always match html tags
+Plugin 'leafgarland/typescript-vim'
 "Plugin 'garbas/vim-snipmate'
 
 " theme and color
@@ -48,6 +54,10 @@ map <leader>tD :TernDoc<cr>
 map <leader>tt :TernType<cr>
 map <leader>tr :TernRefs<cr>
 map <leader>tR :TernRename<cr>
+
+
+"""" YouCompleteMe setting
+set completeopt-=preview
 
 
 """" Jsx syntax
@@ -80,3 +90,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+
+
+"""" commenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
