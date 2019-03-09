@@ -19,8 +19,14 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
-" for js development
+" for development
 Plugin 'vim-syntastic/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+" for python development
+Plugin 'heavenshell/vim-pydocstring'
+Plugin 'Vimjas/vim-python-pep8-indent'
+" for javascript development
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'alvan/vim-closetag'         " auto close html tags
@@ -90,6 +96,17 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+" flake8 setting
+let g:syntastic_python_flake8_post_args="--max-line-length=120"
+let g:syntastic_python_flake8_args="--ignore=E402"
+" pylint setting
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
+let g:syntastic_python_pylint_args="--generated-members=pyspark.sql.functions.*,F.* --disable=wrong-import-position,invalid-name,broad-except,no-member,too-many-locals"
+
+
+""""" Pydocstring setting
+nmap <silent> <leader>ds <Plug>(pydocstring)
 
 
 """" commenter
@@ -98,3 +115,6 @@ let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+"""" git setting
+set updatetime=500
