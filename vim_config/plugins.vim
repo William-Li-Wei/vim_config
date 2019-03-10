@@ -65,6 +65,14 @@ map <leader>tR :TernRename<cr>
 """" YouCompleteMe setting
 set completeopt-=preview
 
+let g:ycm_python_interpreter_path = '/home/william/ForceStation/Resources/anaconda3/envs/dev/bin/python'
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.vim_config/global_ycm_conf.py'
+
 
 """" Jsx syntax
 let g:jsx_ext_required = 0  " Allow JSX in normal JS files
