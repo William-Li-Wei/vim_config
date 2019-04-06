@@ -3,7 +3,7 @@
 ## How to get started
 1. Clone and install this vim config
 ```
-git clone https://github.com/sadleader/vim_config.git /tmp/vim_config
+git clone https://github.com/William-WeiLi/vim_config.git /tmp/vim_config
 
 sh /tmp/vim_config/install.sh
 ```
