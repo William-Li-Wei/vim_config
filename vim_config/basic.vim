@@ -97,6 +97,7 @@ nmap <leader>q :q<cr>
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+nnoremap <Leader>vv :vimgrep <cword> ./**/* <CR>:cw<CR>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
