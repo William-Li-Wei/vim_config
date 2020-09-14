@@ -135,6 +135,8 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " Copy to clipboard
 map <leader>y "+y
+" Paste from clipboard
+map <Leader>p "+p
 
 " Specify the behavior when switching between buffers 
 try
