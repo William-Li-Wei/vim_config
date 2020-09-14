@@ -133,6 +133,8 @@ au TabLeave * let g:lasttab = tabpagenr()
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+" Copy to clipboard
+map <leader>y "+y
 
 " Specify the behavior when switching between buffers 
 try
