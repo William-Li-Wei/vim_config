@@ -15,6 +15,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'dkprice/vim-easygrep'
 Plugin 'scrooloose/nerdcommenter'
 
 " for development
