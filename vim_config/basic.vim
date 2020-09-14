@@ -122,7 +122,7 @@ map <leader>bo :BufOnly<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
-map <leader>tc :tabclose<cr>
+map <leader>tc :tabclose <bar> call CleanNoNameEmptyBuffers()<cr>
 map <leader>tm :tabmove<cr> 
 map <leader>t<leader> :tabnext<cr>
 " Let 'tl' toggle between this and the last accessed tab
@@ -179,3 +179,11 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
+function! CleanNoNameEmptyBuffers()
+    let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 && (getbufline(v:val, 1, "$") == [""])')
+    if !empty(buffers)
+        exe 'bd '.join(buffers, ' ')
+    else
+        echo 'No buffer deleted'
+    endif
+endfunction
