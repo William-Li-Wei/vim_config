@@ -118,8 +118,8 @@ if has("mac") || has("macunix")
 endif
 
 " Buffers and Tabs
-map <leader>bd :bd<cr>:tabclose<cr>gT
-map <leader>bo :BufOnly<cr>
+map <leader>bd :bd<cr>:tabclose <bar> call CleanNoNameEmptyBuffers()<cr>gT
+map <leader>bo :BufOnly <bar> call CleanNoNameEmptyBuffers()<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
