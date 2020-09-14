@@ -16,8 +16,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'dkprice/vim-easygrep'
-Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " for development
 Plugin 'vim-syntastic/syntastic'
