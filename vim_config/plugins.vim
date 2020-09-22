@@ -53,11 +53,12 @@ map <leader>nf :NERDTreeFind<cr>
 
 
 """" Tern setting
-map <leader>td :TernDef<cr>
-map <leader>tD :TernDoc<cr>
-map <leader>tt :TernType<cr>
-map <leader>tr :TernRefs<cr>
-map <leader>tR :TernRename<cr>
+au FileType javascript map <leader>td :TernDef<cr>
+au FileType javascript map <leader>tD :TernDoc<cr>
+au FileType javascript map <leader>tt :TernType<cr>
+au FileType javascript map <leader>tr :TernRefs<cr>
+au FileType javascript map <leader>tR :TernRename<cr>
+au FileType python map <leader>td :YcmCompleter GoTo<cr>
 
 
 """" YouCompleteMe setting
