@@ -91,7 +91,7 @@ map <silent> <leader><cr> :noh<cr> " No highlight
 map <leader>ss :setlocal spell!<cr> " Spell checking
 nmap <leader>w :w!<cr> " Fast saving
 command W w !sudo tee % > /dev/null " Sudu saving
-"nmap <leader>q :q<cr>
+nmap <leader>q :q<cr>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
