@@ -11,7 +11,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 "Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
+" YouCompleteMe is broken at the moment, use Jedi as a replacement
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -61,16 +63,16 @@ map <leader>nf :NERDTreeFind<cr>
 
 
 """" YouCompleteMe setting
-set completeopt-=preview
-
-let g:ycm_python_interpreter_path = '/home/william/ForceStation/Resources/anaconda3/envs/dev/bin/python'
-let g:ycm_python_sys_path = []
-let g:ycm_extra_conf_vim_data = [
-  \  'g:ycm_python_interpreter_path',
-  \  'g:ycm_python_sys_path'
-  \]
-let g:ycm_global_ycm_extra_conf = '~/.vim_config/global_ycm_conf.py'
-au FileType python map <leader>td :YcmCompleter GoTo<cr>
+" set completeopt-=preview
+"
+" let g:ycm_python_interpreter_path = '/Users/wei/.pyenv/shims/python3'
+" let g:ycm_python_sys_path = []
+" let g:ycm_extra_conf_vim_data = [
+"   \  'g:ycm_python_interpreter_path',
+"   \  'g:ycm_python_sys_path'
+"   \]
+" let g:ycm_global_ycm_extra_conf = '~/.vim_config/global_ycm_conf.py'
+" au FileType python map <leader>td :YcmCompleter GoTo<cr>
 
 
 """" Jsx syntax
