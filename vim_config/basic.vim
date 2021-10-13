@@ -7,7 +7,6 @@ set autoread
 filetype plugin on
 filetype indent on
 
-let mapleader = ","
 let g:mapleader = ","
 
 " Tab and indent
@@ -20,7 +19,7 @@ set smarttab
 
 " Line break and wrap
 set lbr
-set tw=500
+"set tw=500
 set wrap "Wrap lines
 
 " Search settings
@@ -35,7 +34,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
-set nowb
+set wb
 set noswapfile
 
 
@@ -60,8 +59,8 @@ set so=10 " Show 10 lines above/below the cursor
 set cmdheight=2
 set hidden " keep buffer open when hidden
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l " wrap left and right
-set showmatch
+"set whichwrap+=<,>,h,l " wrap left and right
+"set showmatch
 set mat=2
 set t_Co=256
 set laststatus=2
@@ -92,7 +91,7 @@ map <silent> <leader><cr> :noh<cr> " No highlight
 map <leader>ss :setlocal spell!<cr> " Spell checking
 nmap <leader>w :w!<cr> " Fast saving
 command W w !sudo tee % > /dev/null " Sudu saving
-nmap <leader>q :q<cr>
+"nmap <leader>q :q<cr>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -118,21 +117,22 @@ if has("mac") || has("macunix")
 endif
 
 " Buffers and Tabs
-map <leader>bd :bd<cr>:tabclose<cr>gT
+"map <leader>bd :bd<cr>:tabclose<cr>gT
+map <leader>bd :bd<cr>
 map <leader>bo :BufOnly<cr>
 map <leader>bc :call CleanNoNameEmptyBuffers()<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
-map <leader>tn :tabnew<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove<cr> 
-map <leader>t<leader> :tabnext<cr>
+"map <leader>tn :tabnew<cr>
+"map <leader>tc :tabclose<cr>
+"map <leader>tm :tabmove<cr> 
+"map <leader>t<leader> :tabnext<cr>
 " Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<cr>
-au TabLeave * let g:lasttab = tabpagenr()
+"let g:lasttab = 1
+"nmap <Leader>tl :exe "tabn ".g:lasttab<cr>
+"au TabLeave * let g:lasttab = tabpagenr()
 " Opens a new tab with the current buffer's path
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+"map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " Copy to clipboard

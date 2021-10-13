@@ -10,8 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-surround'
-Plugin 'ternjs/tern_for_vim'
+"Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-scripts/BufOnly.vim'
@@ -25,11 +24,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'Vimjas/vim-python-pep8-indent'
 " for javascript development
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'alvan/vim-closetag'         " auto close html tags
-Plugin 'Valloric/MatchTagAlways'    " always match html tags
-Plugin 'leafgarland/typescript-vim'
+"Plugin 'ternjs/tern_for_vim'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'mxw/vim-jsx'
+"Plugin 'alvan/vim-closetag'         " auto close html tags
+"Plugin 'Valloric/MatchTagAlways'    " always match html tags
+"Plugin 'leafgarland/typescript-vim'
 "Plugin 'garbas/vim-snipmate'
 
 " theme and color
@@ -53,12 +53,11 @@ map <leader>nf :NERDTreeFind<cr>
 
 
 """" Tern setting
-au FileType javascript map <leader>td :TernDef<cr>
-au FileType javascript map <leader>tD :TernDoc<cr>
-au FileType javascript map <leader>tt :TernType<cr>
-au FileType javascript map <leader>tr :TernRefs<cr>
-au FileType javascript map <leader>tR :TernRename<cr>
-au FileType python map <leader>td :YcmCompleter GoTo<cr>
+"au FileType javascript map <leader>td :TernDef<cr>
+"au FileType javascript map <leader>tD :TernDoc<cr>
+"au FileType javascript map <leader>tt :TernType<cr>
+"au FileType javascript map <leader>tr :TernRefs<cr>
+"au FileType javascript map <leader>tR :TernRename<cr>
 
 
 """" YouCompleteMe setting
@@ -71,10 +70,11 @@ let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_sys_path'
   \]
 let g:ycm_global_ycm_extra_conf = '~/.vim_config/global_ycm_conf.py'
+au FileType python map <leader>td :YcmCompleter GoTo<cr>
 
 
 """" Jsx syntax
-let g:jsx_ext_required = 0  " Allow JSX in normal JS files
+"let g:jsx_ext_required = 0  " Allow JSX in normal JS files
 
 
 """" Airline setting
