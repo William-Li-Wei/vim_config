@@ -11,12 +11,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jiangmiao/auto-pairs'
 "Plugin 'tpope/vim-surround'
-" YouCompleteMe is broken at the moment, use Jedi as a replacement
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'tabnine/YouCompleteMe'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'puremourning/vimspector'
 
 " for development
 Plugin 'vim-syntastic/syntastic'
@@ -63,16 +62,16 @@ map <leader>nf :NERDTreeFind<cr>
 
 
 """" YouCompleteMe setting
-" set completeopt-=preview
-"
-" let g:ycm_python_interpreter_path = '/Users/wei/.pyenv/shims/python3'
-" let g:ycm_python_sys_path = []
-" let g:ycm_extra_conf_vim_data = [
-"   \  'g:ycm_python_interpreter_path',
-"   \  'g:ycm_python_sys_path'
-"   \]
-" let g:ycm_global_ycm_extra_conf = '~/.vim_config/global_ycm_conf.py'
-" au FileType python map <leader>td :YcmCompleter GoTo<cr>
+set completeopt-=preview
+
+let g:ycm_python_interpreter_path = '/Users/Wei.Li/.pyenv/shims/python3'
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.vim_config/global_ycm_conf.py'
+au FileType python map <leader>td :YcmCompleter GoTo<cr>
 
 
 """" Jsx syntax
@@ -107,7 +106,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8', 'pylint']
 " flake8 setting
-let g:syntastic_python_flake8_post_args="--max-line-length=120"
+" let g:syntastic_python_flake8_post_args="--max-line-length=120"
 let g:syntastic_python_flake8_args="--ignore=E402"
 " pylint setting
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
@@ -116,6 +115,8 @@ let g:syntastic_python_pylint_args="--generated-members=pyspark.sql.functions.*,
 
 """"" Pydocstring setting
 nmap <silent> <leader>ds <Plug>(pydocstring)
+let g:pydocstring_doq_path = "/usr/local/bin/doq"
+let g:pydocstring_formatter = "sphinx"
 
 
 """" commenter
@@ -127,3 +128,13 @@ let g:NERDTrimTrailingWhitespace = 1
 
 """" git setting
 set updatetime=500
+
+"""" vimspector
+:command Debug :call vimspector#Launch()
+:command DebugStop :call vimspector#Reset()
+nnoremap <S-j> :call vimspector#StepOver()<CR>
+nnoremap <S-k> :call vimspector#StepInto()<CR>
+nnoremap <S-l> :call vimspector#StepOut()<CR>
+nnoremap <S-c> :call vimspector#Continue()<CR>
+:command Break :call vimspector#ToggleBreakpoint()
+:command DebugClear :call vimspector#ClearBreakpoints()
